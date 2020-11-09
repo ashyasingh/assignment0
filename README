@@ -1,0 +1,46 @@
+
+
+    CS 410 Assignment 0
+    -------------------
+
+This assignment was completed in Oracle VirtualBox running
+Ubuntu Linux 5.4.0-48-generic with following configuration:
+    CPU speed : 2194.918 MHz
+    CPU core count : 2
+
+The attached Makefile can be used to build "all" target, which
+produces following executable programs :
+1. getsections
+   This program ..
+
+    usage: ./getsections <filename> 
+
+2. getsyms
+
+3. gettxt
+
+4. getsections_dl
+
+5. getsyms_dl
+
+6. gettxt_dl
+
+and the static library libobjdata.a and the dynamic library libobjdata.so
+
+Once you make clean and make all, it will build the libraries and programs needed for the assignment. When you type in ./ get_stats.sh and then cat stats, it will run the programs and record the times for get_sections_dl RTLD_LAZY and RTLD_NOW and get_syms_dl RTLD_LAZY and RTLD_NOW and it will write it all down and then calculate and state the average of each program. The get_stats.sh is written using bash to call the two programs,run it 50 times for both RTLD_LAZY and RTLD_NOW and record the run times and calculate the average and print all of it in an organized and easy to read way. You can also type in the commands stated in the Assignment to check everything.
+
+
+The LD_LIBRARY_PATH must be set to include ./ directory before
+running any _dl programs.
+  export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
+The stats for dynamically linked library was collected using
+the attached script file, get_stats.sh .
+The data collected shows 50 samples of dlopen processing time
+(in micro-seconds) for RTLD_LAZY and RTLD_NOW options.
+For the usec calculation, the CPU frequency was rounded up to
+next integer value 2195 MHz.
+
+
+
+
